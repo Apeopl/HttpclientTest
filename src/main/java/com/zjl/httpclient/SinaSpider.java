@@ -11,6 +11,11 @@ import java.net.URLConnection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 网页爬虫
+ * @author king-zheng
+ *
+ */
 public class SinaSpider {
 	public static void main(String[] args) {
 		URL url = null;
