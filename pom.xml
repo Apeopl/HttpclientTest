@@ -26,6 +26,7 @@
 		<commons-io.version>2.5</commons-io.version>
 		<htmlunit.version>2.26</htmlunit.version>
 		<jsoup.version>1.10.2</jsoup.version>
+		<itextpdf.version>5.5.10</itextpdf.version>
 	</properties>
 
 	<dependencies>
@@ -63,6 +64,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+		    <groupId>com.itextpdf</groupId>
+		    <artifactId>itextpdf</artifactId>
+		    <version>${itextpdf.version}</version>
+		</dependency>
+				
 	</dependencies>
 
 	<build>
