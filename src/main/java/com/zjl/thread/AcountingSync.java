@@ -1,7 +1,7 @@
 package com.zjl.thread;
 
 public class AcountingSync implements Runnable{
-	static int i = 0;
+	static volatile int i = 0;
 	@Override
 	public void run() {
 		for(int j=0; j<10000; j++){
@@ -9,7 +9,7 @@ public class AcountingSync implements Runnable{
 		}
 	}
 
-	private synchronized void increase() {
+	private /*synchronized*/ void increase() {
 		i++;
 		System.out.println(Thread.currentThread().getName()+":"+i);
 	}
