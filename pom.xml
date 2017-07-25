@@ -69,7 +69,13 @@
 		    <artifactId>itextpdf</artifactId>
 		    <version>${itextpdf.version}</version>
 		</dependency>
-				
+		<!-- https://mvnrepository.com/artifact/cn.edu.hfut.dmic.webcollector/WebCollector -->
+		<dependency>
+		    <groupId>cn.edu.hfut.dmic.webcollector</groupId>
+		    <artifactId>WebCollector</artifactId>
+		    <version>2.32</version>
+		</dependency>
+					
 	</dependencies>
 
 	<build>
