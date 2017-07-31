@@ -10,12 +10,15 @@ import java.io.FileFilter;
 */
 public class HiddenFileTest {
 	public static void main(String[] args) {
-		File[] hiddenFile = new File("D:\\ZZZ\\资料\\资料").listFiles(new FileFilter() {
+		//jdk8之前
+		/*File[] hiddenFile = new File("D:\\ZZZ\\资料\\资料").listFiles(new FileFilter() {
 			@Override
 			public boolean accept(File file) {
 				return file.isHidden();
 			}
-		});
+		});*/
+		//jdk8之后
+		File[] hiddenFile = new File("D:\\ZZZ\\资料\\资料").listFiles(File :: isHidden);
 		for (File file : hiddenFile) {
 			System.out.println(file.getName());
 		}
