@@ -4,13 +4,14 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+
+import cn.edu.hfut.dmic.webcollector.util.FileUtils;
 
 public class HttpclientPic {
 	public static void main(String[] args) throws ClientProtocolException, IOException {
@@ -22,7 +23,7 @@ public class HttpclientPic {
 		if(null!=entity){
 			System.err.println("ContentType："+entity.getContentType().getValue());
 			InputStream inputStream = entity.getContent();
-			FileUtils.copyToFile(inputStream, new File("D:/first.gif"));
+			//FileUtils.copyToFile(inputStream, new File("D:/first.gif"));
 		}
 		/*response.close();
 		httpClient.close();*/
