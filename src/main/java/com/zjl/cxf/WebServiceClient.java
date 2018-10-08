@@ -1,12 +1,11 @@
 package com.zjl.cxf;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.xml.namespace.QName;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
+
+import com.zjl.cxf.impl.User;
 
 /** 
 * 描述：
@@ -16,9 +15,14 @@ import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 public class WebServiceClient {
 	public static void main(String[] args) throws Exception {
 		JaxWsDynamicClientFactory clientFactory = JaxWsDynamicClientFactory.newInstance();
-		Client client = clientFactory.createClient("http://www.webxml.com.cn/WebServices/IpAddressSearchWebService.asmx?wsdl");
-		QName name = new QName("http://WebXml.com.cn/", "getCountryCityByIp");
-		Object[] objects = client.invoke(name, "");
+		Client client = clientFactory.createClient("http://localhost:9090/service/theService?wsdl");
+		QName name = new QName("http://service.common.hys.org/", "getUser");
+		/*YyksAndYsQueryRequest request = new YyksAndYsQueryRequest();
+		request.setYydm("361029001");
+		request.setKsrq("20180103");
+		request.setJsrq("20180109");*/
+		Object[] objects = client.invoke(name,"lei",23);
+		//Object[] objects = client.invoke(name,request);
 		System.out.println(objects[0].toString());
 		System.out.println(objects.length);
 	}
